@@ -14,6 +14,12 @@
 		88100F301F0DE67200FA4D8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88100F2F1F0DE67200FA4D8E /* Assets.xcassets */; };
 		88100F331F0DE67200FA4D8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88100F311F0DE67200FA4D8E /* LaunchScreen.storyboard */; };
 		88100F3E1F0DE67200FA4D8E /* _w2d4_iOSGesturesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88100F3D1F0DE67200FA4D8E /* _w2d4_iOSGesturesTests.m */; };
+		88100F4A1F0DE69A00FA4D8E /* PanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88100F491F0DE69A00FA4D8E /* PanViewController.m */; };
+		88100F4D1F0DE6AD00FA4D8E /* TapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88100F4C1F0DE6AD00FA4D8E /* TapViewController.m */; };
+		88100F501F0DE6BA00FA4D8E /* PinchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88100F4F1F0DE6BA00FA4D8E /* PinchViewController.m */; };
+		88100F531F0DE6C900FA4D8E /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88100F521F0DE6C900FA4D8E /* SwipeViewController.m */; };
+		88100F561F0DE6D700FA4D8E /* RotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88100F551F0DE6D700FA4D8E /* RotationViewController.m */; };
+		88100F591F0DE6E500FA4D8E /* EdgePanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88100F581F0DE6E500FA4D8E /* EdgePanViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,18 @@
 		88100F391F0DE67200FA4D8E /* 2w2d4_iOSGesturesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 2w2d4_iOSGesturesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88100F3D1F0DE67200FA4D8E /* _w2d4_iOSGesturesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _w2d4_iOSGesturesTests.m; sourceTree = "<group>"; };
 		88100F3F1F0DE67200FA4D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88100F481F0DE69A00FA4D8E /* PanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanViewController.h; sourceTree = "<group>"; };
+		88100F491F0DE69A00FA4D8E /* PanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanViewController.m; sourceTree = "<group>"; };
+		88100F4B1F0DE6AD00FA4D8E /* TapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapViewController.h; sourceTree = "<group>"; };
+		88100F4C1F0DE6AD00FA4D8E /* TapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapViewController.m; sourceTree = "<group>"; };
+		88100F4E1F0DE6BA00FA4D8E /* PinchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinchViewController.h; sourceTree = "<group>"; };
+		88100F4F1F0DE6BA00FA4D8E /* PinchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinchViewController.m; sourceTree = "<group>"; };
+		88100F511F0DE6C900FA4D8E /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
+		88100F521F0DE6C900FA4D8E /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
+		88100F541F0DE6D700FA4D8E /* RotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationViewController.h; sourceTree = "<group>"; };
+		88100F551F0DE6D700FA4D8E /* RotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotationViewController.m; sourceTree = "<group>"; };
+		88100F571F0DE6E500FA4D8E /* EdgePanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgePanViewController.h; sourceTree = "<group>"; };
+		88100F581F0DE6E500FA4D8E /* EdgePanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EdgePanViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +81,18 @@
 		88100F171F0DE67200FA4D8E = {
 			isa = PBXGroup;
 			children = (
+				88100F481F0DE69A00FA4D8E /* PanViewController.h */,
+				88100F491F0DE69A00FA4D8E /* PanViewController.m */,
+				88100F4B1F0DE6AD00FA4D8E /* TapViewController.h */,
+				88100F4C1F0DE6AD00FA4D8E /* TapViewController.m */,
+				88100F4E1F0DE6BA00FA4D8E /* PinchViewController.h */,
+				88100F4F1F0DE6BA00FA4D8E /* PinchViewController.m */,
+				88100F511F0DE6C900FA4D8E /* SwipeViewController.h */,
+				88100F521F0DE6C900FA4D8E /* SwipeViewController.m */,
+				88100F541F0DE6D700FA4D8E /* RotationViewController.h */,
+				88100F551F0DE6D700FA4D8E /* RotationViewController.m */,
+				88100F571F0DE6E500FA4D8E /* EdgePanViewController.h */,
+				88100F581F0DE6E500FA4D8E /* EdgePanViewController.m */,
 				88100F221F0DE67200FA4D8E /* 2w2d4_iOSGestures */,
 				88100F3C1F0DE67200FA4D8E /* 2w2d4_iOSGesturesTests */,
 				88100F211F0DE67200FA4D8E /* Products */,
@@ -213,9 +243,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88100F4A1F0DE69A00FA4D8E /* PanViewController.m in Sources */,
+				88100F501F0DE6BA00FA4D8E /* PinchViewController.m in Sources */,
+				88100F561F0DE6D700FA4D8E /* RotationViewController.m in Sources */,
+				88100F4D1F0DE6AD00FA4D8E /* TapViewController.m in Sources */,
+				88100F591F0DE6E500FA4D8E /* EdgePanViewController.m in Sources */,
 				88100F2B1F0DE67200FA4D8E /* ViewController.m in Sources */,
 				88100F281F0DE67200FA4D8E /* AppDelegate.m in Sources */,
 				88100F251F0DE67200FA4D8E /* main.m in Sources */,
+				88100F531F0DE6C900FA4D8E /* SwipeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
