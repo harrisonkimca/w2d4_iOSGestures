@@ -81,6 +81,7 @@
 		88100F171F0DE67200FA4D8E = {
 			isa = PBXGroup;
 			children = (
+				88100F2C1F0DE67200FA4D8E /* Main.storyboard */,
 				88100F481F0DE69A00FA4D8E /* PanViewController.h */,
 				88100F491F0DE69A00FA4D8E /* PanViewController.m */,
 				88100F4B1F0DE6AD00FA4D8E /* TapViewController.h */,
@@ -115,7 +116,6 @@
 				88100F271F0DE67200FA4D8E /* AppDelegate.m */,
 				88100F291F0DE67200FA4D8E /* ViewController.h */,
 				88100F2A1F0DE67200FA4D8E /* ViewController.m */,
-				88100F2C1F0DE67200FA4D8E /* Main.storyboard */,
 				88100F2F1F0DE67200FA4D8E /* Assets.xcassets */,
 				88100F311F0DE67200FA4D8E /* LaunchScreen.storyboard */,
 				88100F341F0DE67200FA4D8E /* Info.plist */,
@@ -280,6 +280,7 @@
 				88100F2D1F0DE67200FA4D8E /* Base */,
 			);
 			name = Main.storyboard;
+			path = 2w2d4_iOSGestures;
 			sourceTree = "<group>";
 		};
 		88100F311F0DE67200FA4D8E /* LaunchScreen.storyboard */ = {
