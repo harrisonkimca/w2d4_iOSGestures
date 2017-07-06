@@ -10,6 +10,9 @@
 
 @interface TapViewController ()
 
+// use property to store the recognizer
+@property (strong, nonatomic) UITapGestureRecognizer *tapGesture;
+
 @end
 
 @implementation TapViewController
@@ -26,8 +29,11 @@
     [self.view addSubview:view];
     
     // add tap gesture
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(colorChanged:)];
-    [view addGestureRecognizer:tapGesture];
+    //UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(colorChanged:)];
+    //[view addGestureRecognizer:tapGesture];
+    // use property to store recognizer
+    self.tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(colorChanged:)];
+    [view addGestureRecognizer:self.tapGesture];
 }
 
 - (void)colorChanged:(UITapGestureRecognizer*)sender

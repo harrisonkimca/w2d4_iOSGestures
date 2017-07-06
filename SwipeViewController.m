@@ -11,6 +11,8 @@
 @interface SwipeViewController ()
 
 @property (nonatomic) BOOL centered;
+@property (strong, nonatomic) UISwipeGestureRecognizer *swipeGestureLeft;
+@property (strong, nonatomic) UISwipeGestureRecognizer *swipeGestureRight;
 
 @end
 
@@ -32,19 +34,19 @@
     [backview addSubview:frontview];
     
     // add swipe gesture
-    UISwipeGestureRecognizer *swipeGestureLeft = [[UISwipeGestureRecognizer alloc]
+    self.swipeGestureLeft = [[UISwipeGestureRecognizer alloc]
                                           initWithTarget:self
                                                   action:@selector(viewSwiped:)];
     // add recognizer to frontview
-    swipeGestureLeft.direction = UISwipeGestureRecognizerDirectionLeft;
-    [frontview addGestureRecognizer:swipeGestureLeft];
+    self.swipeGestureLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [frontview addGestureRecognizer:self.swipeGestureLeft];
     
-    UISwipeGestureRecognizer *swipeGestureRight = [[UISwipeGestureRecognizer alloc]
+    self.swipeGestureRight = [[UISwipeGestureRecognizer alloc]
                                           initWithTarget:self
                                                   action:@selector(viewSwiped:)];
     // add recognizer to frontview
-    swipeGestureRight.direction = UISwipeGestureRecognizerDirectionRight;
-    [frontview addGestureRecognizer:swipeGestureRight];
+    self.swipeGestureRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [frontview addGestureRecognizer:self.swipeGestureRight];
     
     self.centered = YES;
     

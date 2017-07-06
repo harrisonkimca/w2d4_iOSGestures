@@ -10,6 +10,9 @@
 
 @interface PinchViewController ()
 
+// use property to store the recognizer
+@property (strong, nonatomic) UIPinchGestureRecognizer *pinchGesture;
+
 @end
 
 @implementation PinchViewController
@@ -25,8 +28,8 @@
     [self.view addSubview:view];
     
     // add pinch gesture
-    UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(viewPinched:)];
-    [view addGestureRecognizer:pinchGesture];
+    self.pinchGesture = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(viewPinched:)];
+    [view addGestureRecognizer:self.pinchGesture];
 }
 
 - (void)viewPinched:(UIPinchGestureRecognizer*)sender

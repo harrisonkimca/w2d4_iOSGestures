@@ -13,6 +13,7 @@
 // set properties for width & height to allow rotation
 @property (nonatomic) CGFloat width;
 @property (nonatomic) CGFloat height;
+@property (strong, nonatomic) UIRotationGestureRecognizer *rotationGesture;
 
 @end
 
@@ -28,10 +29,10 @@
     [self.view addSubview:redView];
     
     // add rotation gesture
-    UIRotationGestureRecognizer *rotationGesture = [[UIRotationGestureRecognizer alloc]
+    self.rotationGesture = [[UIRotationGestureRecognizer alloc]
                                             initWithTarget:self
                                                     action:@selector(viewRotated:)];
-    [redView addGestureRecognizer:rotationGesture];
+    [redView addGestureRecognizer:self.rotationGesture];
 }
 
 - (void)viewRotated:(UIRotationGestureRecognizer*)sender

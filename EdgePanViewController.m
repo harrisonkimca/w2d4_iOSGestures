@@ -8,30 +8,105 @@
 
 #import "EdgePanViewController.h"
 
-@interface EdgePanViewController ()
+@interface EdgePanViewController () <UIGestureRecognizerDelegate>
+
+@property (strong, nonatomic) UIView *sideRectangle;
+@property (nonatomic) CGRect frameOrigin;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
+
+// create properties for recognizers since will need to store (also using two similar ones)
+@property (strong, nonatomic) UIScreenEdgePanGestureRecognizer *edgePanRecognizer;
+@property (strong, nonatomic) UIPanGestureRecognizer *panBack;
 
 @end
 
 @implementation EdgePanViewController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _width = 500;
+        _height = 300;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.width = 500;
+    self.height = 300;
+    
+    self.frameOrigin = CGRectMake(400, CGRectGetMidY(self.view.bounds) - self.height/2, self.width, self.height);
+    self.sideRectangle = [[UIView alloc]initWithFrame:self.frameOrigin];
+    self.sideRectangle.backgroundColor = [UIColor redColor];
+    [self.view addSubview:self.sideRectangle];
+    
+    // add screen pan gesture recognizer
+    self.edgePanRecognizer = [[UIScreenEdgePanGestureRecognizer alloc]
+                                            initWithTarget:self
+                                                    action:@selector(viewEdgePanned:)];
+    self.edgePanRecognizer.edges = UIRectEdgeRight;
+    self.edgePanRecognizer.delegate = self;
+    
+    [self.sideRectangle addGestureRecognizer:self.edgePanRecognizer];
+    
+    // *** add panback here now (will need to add and then remove)
+    self.panBack = [[UIPanGestureRecognizer alloc]
+                                    initWithTarget:self
+                                            action:@selector(panBackToEdge:)];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewEdgePanned:(UIScreenEdgePanGestureRecognizer*)sender
+{
+    if (sender.state == UIGestureRecognizerStateChanged)
+    {
+        CGPoint locationInView = [sender translationInView:sender.view];
+        CGPoint oldCenter = sender.view.center;
+        CGPoint newCenter = CGPointMake(oldCenter.x + locationInView.x, oldCenter.y);
+        
+        [sender setTranslation:CGPointZero inView:self.view];
+        sender.view.center = newCenter;
+    }
+    
+    if (sender.state == UIGestureRecognizerStateEnded)
+    {
+        if (self.sideRectangle.frame.origin.x > 300)
+        {
+            self.sideRectangle.frame = self.frameOrigin;
+        }
+        else
+        {
+            CGRect newOrigin = CGRectMake(100, CGRectGetMidY(self.view.bounds) - self.height/2, self.width, self.height);
+            self.sideRectangle.frame = newOrigin;
+            
+            
+            [self.sideRectangle addGestureRecognizer:self.panBack];
+        }
+    }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)panBackToEdge:(UIPanGestureRecognizer*)sender
+{
+    CGPoint locationInView = [sender translationInView:self.view];
+    CGPoint oldCenter = sender.view.center;
+    CGPoint newCenter = CGPointMake(oldCenter.x + locationInView.x, oldCenter.y);
+    
+    if (self.sideRectangle.frame.origin.x > 200)
+    {
+        self.sideRectangle.frame = self.frameOrigin;
+        // remove the panback recognizer to not confuse the edgepan recognizer
+        [self.sideRectangle removeGestureRecognizer:self.panBack];
+    }
+    else
+    {
+        [sender setTranslation:CGPointZero inView:self.view];
+        sender.view.center = newCenter;
+    }
 }
-*/
-
+    
+    
 @end
