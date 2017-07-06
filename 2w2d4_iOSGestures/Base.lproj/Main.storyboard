@@ -145,7 +145,7 @@
         <!--Tap-->
         <scene sceneID="MhZ-l3-1Cb">
             <objects>
-                <viewController id="Hyj-YQ-r0m" sceneMemberID="viewController">
+                <viewController id="Hyj-YQ-r0m" customClass="TapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zyg-uq-fPH"/>
                         <viewControllerLayoutGuide type="bottom" id="dYx-qn-Mgi"/>
