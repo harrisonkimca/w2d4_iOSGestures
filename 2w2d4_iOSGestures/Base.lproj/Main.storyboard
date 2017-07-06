@@ -69,7 +69,7 @@
         <!--Swipe-->
         <scene sceneID="geO-hA-6gn">
             <objects>
-                <viewController id="Bb3-Kf-3i4" sceneMemberID="viewController">
+                <viewController id="Bb3-Kf-3i4" customClass="SwipeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sf6-u1-8lp"/>
                         <viewControllerLayoutGuide type="bottom" id="asB-GO-RpW"/>
@@ -88,7 +88,7 @@
         <!--Rotation-->
         <scene sceneID="u6F-oO-Oc9">
             <objects>
-                <viewController id="s55-Od-6uy" sceneMemberID="viewController">
+                <viewController id="s55-Od-6uy" customClass="RotationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vqu-1f-BId"/>
                         <viewControllerLayoutGuide type="bottom" id="ELg-jw-QRK"/>
@@ -107,7 +107,7 @@
         <!--PanEdge-->
         <scene sceneID="tYT-av-pge">
             <objects>
-                <viewController id="xO8-ya-A1T" sceneMemberID="viewController">
+                <viewController id="xO8-ya-A1T" customClass="EdgePanViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="agB-km-8A0"/>
                         <viewControllerLayoutGuide type="bottom" id="ncx-aC-5X7"/>
@@ -126,7 +126,7 @@
         <!--Pinch-->
         <scene sceneID="D0q-2g-7Aw">
             <objects>
-                <viewController id="nLp-s3-KAL" sceneMemberID="viewController">
+                <viewController id="nLp-s3-KAL" customClass="PinchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3ZS-ed-ShC"/>
                         <viewControllerLayoutGuide type="bottom" id="DZM-QT-R81"/>
