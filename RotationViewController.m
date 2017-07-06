@@ -10,28 +10,33 @@
 
 @interface RotationViewController ()
 
+// set properties for width & height to allow rotation
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
+
 @end
 
 @implementation RotationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.width = 100;
+    self.height = 100;
+    UIView *redView = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMidX(self.view.bounds) - self.width/2, CGRectGetMidY(self.view.bounds) - self.height/2, self.width, self.height)];
+    redView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:redView];
+    
+    // add rotation gesture
+    UIRotationGestureRecognizer *rotationGesture = [[UIRotationGestureRecognizer alloc]
+                                            initWithTarget:self
+                                                    action:@selector(viewRotated:)];
+    [redView addGestureRecognizer:rotationGesture];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewRotated:(UIRotationGestureRecognizer*)sender
+{
+    sender.view.transform = CGAffineTransformMakeRotation(sender.rotation);
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
